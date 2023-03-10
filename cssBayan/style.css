@@ -45,6 +45,7 @@ body{
     overflow: hidden;
     opacity: 0;
     transform: translateX(2rem);
+    border-radius: 1rem;
 
     display: flex;
     justify-content: center;
@@ -55,11 +56,14 @@ body{
     max-height: 0;
 }
 
+#accordion label + input[type="radio"]:hover +.content,
 #accordion label + input[type="radio"]:checked +.content{
     height: 100%;
     opacity: 1;
     transform: translateX(0rem);
 }
+
+#accordion label + input[type="radio"]:hover +.content img,
 #accordion label + input[type="radio"]:checked +.content img{
     max-width: 100%;
     max-height: 100%;
@@ -70,19 +74,6 @@ body{
 #accordion :hover{
     background-color: #cc6019;
 }
-
-#accordion label + input[type="radio"]:hover +.content{
-    height: 100%;
-    opacity: 1;
-    transform: translateX(0px);
-}
-#accordion label + input[type="radio"]:hover +.content img{
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 1rem;
-    margin: 1rem;
-}
-
 .content img:hover{
     filter: drop-shadow(0 0 0.5rem #ff9f5f);
 }
@@ -91,8 +82,18 @@ body{
     rotate: 90deg;
 }
 /* This doesn't work. I can't make the arrow icon change after input being checked. Same with label */
-#accordion label + input[type="radio"]:checked + #accordion li label span{
+/* #accordion:has(input:checked) + label span{
     rotate: -90deg;
+}
+#accordion li input:checked + label span{
+    rotate: -90deg;
+}
+#accordion li input:active + label span{
+    rotate: -90deg;
+} */
+
+:focus{
+    filter: drop-shadow(0 0 1rem #cc6019);
 }
 
 @media screen and (min-width: 1500px) {

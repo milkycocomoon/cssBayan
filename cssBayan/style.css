@@ -1,0 +1,71 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
+body{
+    width: 70%;
+    margin: auto;
+    background-color: #313338;
+    color: white;
+}
+.about_container{
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #5e606b;
+}
+
+#accordion li{
+    list-style: none;
+    background-color: #5e606b;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#accordion li label{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* input[type="checkbox"]:checked + .content{
+    background-color: aqua;
+} */
+
+#accordion :hover{
+    background-color: #3865d4;
+}
+
+#accordion label + input[type="checkbox"]{
+    display: none;
+}
+
+#accordion .content{
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(300px);
+
+    display: flex;
+    justify-content: center;
+}
+
+.content img{
+    max-width: 0;
+    max-height: 0;
+}
+
+#accordion label + input[type="checkbox"]:checked +.content{
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0px);
+}
+#accordion label + input[type="checkbox"]:checked +.content img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px;
+    margin: 20px 0px 20px 0px;
+}

@@ -5,38 +5,35 @@
     transition: all 0.3s;
 }
 body{
-    width: 70%;
+    width: 50%;
     margin: auto;
     background-color: #313338;
     color: white;
 }
 .about_container{
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
     background-color: #5e606b;
+}
+
+#accordion,
+#accordion label{
+    cursor: pointer;
 }
 
 #accordion li{
     list-style: none;
     background-color: #5e606b;
-    margin: 10px;
-    border-radius: 10px;
+    margin: 1rem;
+    border-radius: 1rem;
 }
 
 #accordion li label{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* input[type="checkbox"]:checked + .content{
-    background-color: aqua;
-} */
-
-#accordion :hover{
-    background-color: #3865d4;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 #accordion label + input[type="radio"]{
@@ -47,7 +44,7 @@ body{
     height: 0;
     overflow: hidden;
     opacity: 0;
-    transform: translateX(300px);
+    transform: translateX(2rem);
 
     display: flex;
     justify-content: center;
@@ -61,13 +58,17 @@ body{
 #accordion label + input[type="radio"]:checked +.content{
     height: 100%;
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0rem);
 }
 #accordion label + input[type="radio"]:checked +.content img{
     max-width: 100%;
     max-height: 100%;
-    border-radius: 15px;
-    margin: 20px 0px 20px 0px;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+#accordion :hover{
+    background-color: #cc6019;
 }
 
 #accordion label + input[type="radio"]:hover +.content{
@@ -78,6 +79,44 @@ body{
 #accordion label + input[type="radio"]:hover +.content img{
     max-width: 100%;
     max-height: 100%;
-    border-radius: 15px;
-    margin: 20px 0px 20px 0px;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.content img:hover{
+    filter: drop-shadow(0 0 0.5rem #ff9f5f);
+}
+
+#accordion li label span{
+    rotate: 90deg;
+}
+/* This doesn't work. I can't make the arrow icon change after input being checked. Same with label */
+#accordion label + input[type="radio"]:checked + #accordion li label span{
+    rotate: -90deg;
+}
+
+@media screen and (min-width: 1500px) {
+    body{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    body{
+        width: 80%;
+        font-size: 1.1rem;
+    }
+    #accordion label + input[type="radio"]:checked +.content img{
+        margin: 3rem;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    body{
+        width: 90%;
+        font-size: 1.3rem;
+    }
+    #accordion label + input[type="radio"]:checked +.content img{
+        margin: 0;
+    }
 }

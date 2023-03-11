@@ -1,0 +1,132 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+body{
+    width: 50%;
+    margin: auto;
+    background-color: #313338;
+    color: white;
+}
+.about_container{
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #5e606b;
+}
+.about_container h1{
+    font-size: 2rem;
+}
+
+button{
+    width: 100%;
+    border-radius: 1rem;
+    border: 0;
+    margin-bottom: 1rem;
+    background-color: #5e606b;
+    color: white;
+}
+button:focus{
+    filter: drop-shadow(0 0 0.6rem #5e606b);
+}
+button:hover{
+    background-color: #cc6019;
+    filter: drop-shadow(0 0 0.6rem #cc6019);
+}
+
+span:hover{
+    rotate: 45deg;
+}
+
+#accordion,
+#accordion label,
+button {
+    cursor: pointer;
+}
+
+#accordion li{
+    list-style: none;
+}
+
+#accordion li label{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#accordion label + input[type="radio"]{
+    display: none;
+}
+
+#accordion .content{
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(2rem);
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.content img{
+    max-width: 0;
+    max-height: 0;
+}
+
+.content img:hover{
+    filter: drop-shadow(0 0 0.5rem #ff9f5f);
+}
+
+#accordion label + input[type="radio"]:hover +.content,
+#accordion label + input[type="radio"]:checked +.content{
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0rem);
+    padding: 1rem;
+}
+
+#accordion label + input[type="radio"]:hover +.content img,
+#accordion label + input[type="radio"]:checked +.content img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem;
+}
+
+@media screen and (min-width: 1500px) {
+    body{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    body{
+        width: 80%;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    body{
+        width: 90%;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    body{
+        width: 80%;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    body{
+        width: 90%;
+        font-size: 1.3rem;
+    }
+}

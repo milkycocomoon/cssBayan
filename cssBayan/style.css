@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     transition: all 0.3s;
+    font-size: 1.1rem;
 }
 body{
     width: 50%;
@@ -11,22 +12,43 @@ body{
     color: white;
 }
 .about_container{
-    margin: 1rem;
+    margin: 1rem 0 1rem 0;
     padding: 1rem;
     border-radius: 1rem;
     background-color: #5e606b;
 }
+.about_container h1{
+    font-size: 2rem;
+}
+
+button{
+    width: 100%;
+    border-radius: 1rem;
+    border: 0;
+    margin-bottom: 1rem;
+    background-color: #5e606b;
+    color: white;
+}
+button:focus{
+    filter: drop-shadow(0 0 0.6rem #5e606b);
+}
+button:hover{
+    background-color: #cc6019;
+    filter: drop-shadow(0 0 0.6rem #cc6019);
+}
+
+span:hover{
+    rotate: 45deg;
+}
 
 #accordion,
-#accordion label{
+#accordion label,
+button {
     cursor: pointer;
 }
 
 #accordion li{
     list-style: none;
-    background-color: #5e606b;
-    margin: 1rem;
-    border-radius: 1rem;
 }
 
 #accordion li label{
@@ -56,11 +78,16 @@ body{
     max-height: 0;
 }
 
+.content img:hover{
+    filter: drop-shadow(0 0 0.5rem #ff9f5f);
+}
+
 #accordion label + input[type="radio"]:hover +.content,
 #accordion label + input[type="radio"]:checked +.content{
     height: 100%;
     opacity: 1;
     transform: translateX(0rem);
+    padding: 1rem;
 }
 
 #accordion label + input[type="radio"]:hover +.content img,
@@ -68,32 +95,6 @@ body{
     max-width: 100%;
     max-height: 100%;
     border-radius: 1rem;
-    margin: 1rem;
-}
-
-#accordion :hover{
-    background-color: #cc6019;
-}
-.content img:hover{
-    filter: drop-shadow(0 0 0.5rem #ff9f5f);
-}
-
-#accordion li label span{
-    rotate: 90deg;
-}
-/* This doesn't work. I can't make the arrow icon change after input being checked. Same with label */
-/* #accordion:has(input:checked) + label span{
-    rotate: -90deg;
-}
-#accordion li input:checked + label span{
-    rotate: -90deg;
-}
-#accordion li input:active + label span{
-    rotate: -90deg;
-} */
-
-:focus{
-    filter: drop-shadow(0 0 1rem #cc6019);
 }
 
 @media screen and (min-width: 1500px) {
@@ -107,17 +108,25 @@ body{
         width: 80%;
         font-size: 1.1rem;
     }
-    #accordion label + input[type="radio"]:checked +.content img{
-        margin: 3rem;
+}
+
+@media screen and (max-width: 620px) {
+    body{
+        width: 90%;
+        font-size: 1.1rem;
     }
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 560px) {
+    body{
+        width: 80%;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
     body{
         width: 90%;
         font-size: 1.3rem;
-    }
-    #accordion label + input[type="radio"]:checked +.content img{
-        margin: 0;
     }
 }
